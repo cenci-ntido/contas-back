@@ -6,11 +6,13 @@ import com.example.contas.model.Registry;
 import com.example.contas.service.ICrudService;
 import com.example.contas.service.IRegistryService;
 import org.modelmapper.ModelMapper;
+import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
 @RestController
 @RequestMapping("registries")
+@CrossOrigin
 public class RegistryController extends CrudController<Registry, RegistryDTO, Long> {
 
     private static IRegistryService expenseDetailService;

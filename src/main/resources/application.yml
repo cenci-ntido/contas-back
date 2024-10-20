@@ -18,14 +18,27 @@ spring:
   datasource:
     url: jdbc:h2:mem:pw26s-dev
 ---
+#spring:
+#  config:
+#    activate:
+#      on-profile: dev-postgres
+#  datasource:
+#    url: jdbc:postgresql://127.0.0.1:5432/contas
+#    username: postgres
+#    password: 01thiago
+#  jpa:
+#    hibernate:
+#      ddl-auto: create
 spring:
-  config:
-    activate:
-      on-profile: dev-postgres
   datasource:
-    url: jdbc:postgresql://127.0.0.1:5432/contas
-    username: postgres
-    password: 01thiago
+    url: "jdbc:postgresql://ep-young-breeze-a48uaknj-pooler.us-east-1.aws.neon.tech:5432/verceldb?sslmode=require"
+    username: "default"
+    password: "hcWRi0unLd1j"
   jpa:
+    database-platform: org.hibernate.dialect.PostgreSQLDialect
     hibernate:
-      ddl-auto: create-drop
+    properties:
+      hibernate:
+        dialect: org.hibernate.dialect.PostgreSQLDialect
+        show_sql: true # Se você deseja ver consultas SQL no console de log
+      ddl-auto: update # ou mantenha como 'create' se desejar que as tabelas sejam recriadas a cada inicialização

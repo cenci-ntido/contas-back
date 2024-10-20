@@ -4,6 +4,7 @@ package com.example.contas.dto;
 import com.example.contas.dto.generic.GenericDTO;
 import com.example.contas.model.enuns.PeopleEnum;
 import com.example.contas.model.enuns.StatusEnum;
+import com.example.contas.model.enuns.TypeEnum;
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
@@ -24,4 +25,6 @@ public class RegistryDTO extends GenericDTO {
     private StatusEnum status;
 
     private PeopleEnum person;
+
+    private TypeEnum type;
 }

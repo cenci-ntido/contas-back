@@ -2,8 +2,10 @@ package com.example.contas.model;
 
 import com.example.contas.model.enuns.PeopleEnum;
 import com.example.contas.model.enuns.StatusEnum;
+import com.example.contas.model.enuns.TypeEnum;
 import jakarta.persistence.*;
 import lombok.*;
+import org.springframework.web.bind.annotation.CrossOrigin;
 
 
 @Entity
@@ -33,4 +35,8 @@ public class Registry {
     @Column(nullable = false)
     @Enumerated(EnumType.STRING)
     private PeopleEnum person;
+
+    @Column(nullable = false)
+    @Enumerated(EnumType.STRING)
+    private TypeEnum type;
 }
