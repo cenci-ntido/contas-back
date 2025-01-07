@@ -1,6 +1,6 @@
 package com.example.contas.model.enuns;
 
-public enum PeopleEnum {
+public enum Pessoas {
     TI,
     GABI
 }

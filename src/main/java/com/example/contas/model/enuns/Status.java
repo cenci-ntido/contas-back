@@ -1,6 +1,6 @@
 package com.example.contas.model.enuns;
 
-public enum StatusEnum {
+public enum Status {
     RECEBIDO,
     NAO_RECEBIDO,
     EM_ABERTO,

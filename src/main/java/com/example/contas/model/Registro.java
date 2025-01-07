@@ -1,26 +1,25 @@
 package com.example.contas.model;
 
-import com.example.contas.model.enuns.PeopleEnum;
-import com.example.contas.model.enuns.StatusEnum;
-import com.example.contas.model.enuns.TypeEnum;
+import com.example.contas.model.enuns.Pessoas;
+import com.example.contas.model.enuns.Status;
+import com.example.contas.model.enuns.Tipos;
 import jakarta.persistence.*;
 import lombok.*;
-import org.springframework.web.bind.annotation.CrossOrigin;
+
+import java.sql.Date;
 
 
 @Entity
-@Table(name = "registry")
+@Table(name = "registro")
 @Getter
 @Setter
 @NoArgsConstructor
 @AllArgsConstructor
 @Builder
-public class Registry {
+public class Registro {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
-
-    private String period;
 
     @Column(length = 50, nullable = false)
     private String description;
@@ -29,14 +28,17 @@ public class Registry {
     private Double value;
 
     @Column(nullable = false)
-    @Enumerated(EnumType.STRING)
-    private StatusEnum status;
+    private Date dataVencimento;
 
     @Column(nullable = false)
     @Enumerated(EnumType.STRING)
-    private PeopleEnum person;
+    private Status status;
 
     @Column(nullable = false)
     @Enumerated(EnumType.STRING)
-    private TypeEnum type;
+    private Pessoas responsavelPagamento;
+
+    @Column(nullable = false)
+    @Enumerated(EnumType.STRING)
+    private Tipos tipo;
 }

@@ -1,6 +1,6 @@
 package com.example.contas.model.enuns;
 
-public enum AccountsEnum {
+public enum Contas {
     NUBANK_TI,
     INTER_TI
 }

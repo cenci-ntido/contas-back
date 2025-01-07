@@ -1,36 +1,36 @@
 package com.example.contas.controller;
 
 
-import com.example.contas.dto.RegistryDetailDTO;
-import com.example.contas.model.RegistryDetail;
+import com.example.contas.dto.RegistroDetalheDTO;
+import com.example.contas.model.RegistroDetalhe;
 import com.example.contas.service.ICrudService;
-import com.example.contas.service.IRegistryDetailService;
+import com.example.contas.service.IRegistroDetalheService;
 import org.modelmapper.ModelMapper;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
 @RestController
-@RequestMapping("registries_details")
-public class RegistryDetailController extends CrudController<RegistryDetail, RegistryDetailDTO, Long> {
+@RequestMapping("registro_detalhes")
+public class RegistroDetalhesController extends CrudController<RegistroDetalhe, RegistroDetalheDTO, Long> {
 
-    private static IRegistryDetailService expenseDetailService;
+    private static IRegistroDetalheService expenseDetailService;
     private static ModelMapper modelMapper;
 
-    public RegistryDetailController(IRegistryDetailService expenseDetailService,
-                                    ModelMapper modelMapper) {
-        super(RegistryDetail.class, RegistryDetailDTO.class);
-        RegistryDetailController.expenseDetailService = expenseDetailService;
-        RegistryDetailController.modelMapper = modelMapper;
+    public RegistroDetalhesController(IRegistroDetalheService expenseDetailService,
+                                      ModelMapper modelMapper) {
+        super(RegistroDetalhe.class, RegistroDetalheDTO.class);
+        RegistroDetalhesController.expenseDetailService = expenseDetailService;
+        RegistroDetalhesController.modelMapper = modelMapper;
     }
 
     @Override
-    protected ICrudService<RegistryDetail, Long> getService() {
-        return RegistryDetailController.expenseDetailService;
+    protected ICrudService<RegistroDetalhe, Long> getService() {
+        return RegistroDetalhesController.expenseDetailService;
     }
 
     @Override
     protected ModelMapper getModelMapper() {
-        return RegistryDetailController.modelMapper;
+        return RegistroDetalhesController.modelMapper;
     }
 }
 

@@ -1,35 +1,39 @@
 package com.example.contas.model;
 
 
-import com.example.contas.model.enuns.AccountsEnum;
-import com.example.contas.model.enuns.StatusEnum;
+import com.example.contas.model.enuns.Contas;
 import jakarta.persistence.*;
 import lombok.*;
 
+import java.sql.Date;
+
 
 @Entity
-@Table(name = "registry_detail")
+@Table(name = "registro_detalhe")
 @Getter
 @Setter
 @NoArgsConstructor
 @AllArgsConstructor
 @Builder
-public class RegistryDetail {
+public class RegistroDetalhe {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
     @ManyToOne
-    @JoinColumn(name = "registry", referencedColumnName = "id")
-    private Registry registry;
+    @JoinColumn(name = "registro", referencedColumnName = "id")
+    private Registro registro;
 
     @Column(length = 50, nullable = false)
-    private String description;
+    private String descricao;
 
     @Column( nullable = false)
-    private Double value;
+    private Double valor;
+
+    @Column( nullable = false)
+    private Date dataPagamento;
 
     @Column(nullable = false)
     @Enumerated(EnumType.STRING)
-    private AccountsEnum account;
+    private Contas conta;
 }

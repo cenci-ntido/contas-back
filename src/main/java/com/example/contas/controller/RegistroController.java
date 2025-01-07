@@ -1,38 +1,38 @@
 package com.example.contas.controller;
 
 
-import com.example.contas.dto.RegistryDTO;
-import com.example.contas.model.Registry;
+import com.example.contas.dto.RegistroDTO;
+import com.example.contas.model.Registro;
 import com.example.contas.service.ICrudService;
-import com.example.contas.service.IRegistryService;
+import com.example.contas.service.IRegistroService;
 import org.modelmapper.ModelMapper;
 import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
 @RestController
-@RequestMapping("registries")
+@RequestMapping("registros")
 @CrossOrigin
-public class RegistryController extends CrudController<Registry, RegistryDTO, Long> {
+public class RegistroController extends CrudController<Registro, RegistroDTO, Long> {
 
-    private static IRegistryService expenseDetailService;
+    private static IRegistroService expenseDetailService;
     private static ModelMapper modelMapper;
 
-    public RegistryController(IRegistryService expenseDetailService,
+    public RegistroController(IRegistroService expenseDetailService,
                               ModelMapper modelMapper) {
-        super(Registry.class, RegistryDTO.class);
-        RegistryController.expenseDetailService = expenseDetailService;
-        RegistryController.modelMapper = modelMapper;
+        super(Registro.class, RegistroDTO.class);
+        RegistroController.expenseDetailService = expenseDetailService;
+        RegistroController.modelMapper = modelMapper;
     }
 
     @Override
-    protected ICrudService<Registry, Long> getService() {
-        return RegistryController.expenseDetailService;
+    protected ICrudService<Registro, Long> getService() {
+        return RegistroController.expenseDetailService;
     }
 
     @Override
     protected ModelMapper getModelMapper() {
-        return RegistryController.modelMapper;
+        return RegistroController.modelMapper;
     }
 }
 
